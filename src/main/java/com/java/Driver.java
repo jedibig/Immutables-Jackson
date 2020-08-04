@@ -8,7 +8,7 @@ public class Driver {
 
     public static void main(String[] args) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        SomeClass someClass = mapper.readValue("{\"foo\": 1, \"bar\": \"Hello\", \"buz\": [1,2,3]}", ImmutableSomeClass.class);
+        AbstractSomeClass someClass = mapper.readValue("{\"foo\": 1, \"bar\": \"Hello\", \"buz\": [1,2,3]}", SomeClass.class);
         System.out.println(someClass);
     }
 }
