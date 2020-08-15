@@ -2,6 +2,7 @@ package com.java;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.immutables.builder.Builder;
 import org.immutables.value.Value;
 import org.immutables.value.Value.Style.ImplementationVisibility;
 
@@ -23,4 +24,9 @@ public abstract class AbstractSomeClass {
     public abstract int foo();
     public abstract String bar();
     public abstract List<Integer> buz();
+
+    @Builder.Factory
+    public static AbstractSomeClass someClass(OtherClass o){
+        return new SomeClass.Builder().setFoo(o.getFoo()).setBar(o.getBar()).create();
+    }
 }
