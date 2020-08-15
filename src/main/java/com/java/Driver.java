@@ -13,7 +13,7 @@ public class Driver {
 
 
         OtherClass o = new OtherClass(1, "hello");
-        AbstractSomeClass someClass1 = AbstractSomeClass.someClass(o);
+        AbstractSomeClass someClass1 = new SomeClassBuilder().setO(o).create();
         System.out.println(someClass1);
     }
 }
